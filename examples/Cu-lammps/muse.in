@@ -1,0 +1,101 @@
+######################################################################
+### The main input file to control the system and search behavior. ###
+######################################################################
+
+### Line started with "#" is omitted.
+### Parameter and value(s) are placed in the same line, in any order with any number of blank lines.
+
+# The string to describe the system.
+NameSys = Cu
+
+# Element symbols of the different atoms
+NameOfAtoms = Cu
+
+# Atomic number of each atom
+AtomicNumber = 29
+
+# The Number of each atom in the primitive cell in accord with AtomicNumber
+Num_atomsInChemForm =  1
+
+# Initial Guessed coarse primitive cell volume used for the first generation. Proper value saves time for the first generation.
+V_guess = 20.0
+
+# The Minimum number of the primitive cell in the supercell for strarting with small system. After the small system is fully
+# converged, it is tricky to quikly converge the larger system based on the information of the small system.
+MinNum_PrimitiveCell = 10
+
+# The Maximum number of the primitive cell in the supercell (the largest system)
+MaxNum_PrimitiveCell = 10
+
+# The increment of number of the primitive cell from Min to Max number of primitive cell in the supercell
+StepNum_PrimitiveCell = 4
+
+# Minimum distance between atoms or ions
+MinDist = 1.3
+
+# Minimum vector of the primitive cell
+MinVect = 2.0
+
+# Pressure in GPa.
+Pressure = 10
+
+# If pick up the optimized structures from the last run for continuing it (1 for yes, 0 for no)
+IfPickUp = 0
+
+# If use Symmetry Constraints in the first generation.(1 for yes, 0 for no)
+IfSymmConstr = 1
+
+# Population Size of each generation
+PopSize = 25
+
+# Percentage of each population for generating next generation
+Perc4NextGen = 0.75
+
+# Number of the best individuals directly passed to the next generation
+Num_Keep = 3
+
+# If the offsprings directly from parents are reoptimized (1 for yes, 0 for no)
+IfReOptKept = 0
+
+# The number of maximum try of each operator for the selected individual(s) until it has positive
+# contribution (produce lower enthalpy str. or changed the space group to increase the diversity).
+MaxTry_EachOperator = 1
+
+# If compete between generations (parents and offspring) (1 for yes, 0 for no)
+IfCompeteBetweenGens = 1
+
+# Initial Gaussian standard deviation for individuals
+InitGaussStdDev = 0.5
+
+# The number of continuous generations with best enthalpy and the same structure used to stop the search
+Num_GenBest = 8
+
+# Inital temperature for annealing
+InitTemp_anneal = 100
+
+# Maximum generation
+MaxGen = 30
+
+# Algorithm for evolution, EA: evolutionary algorithm, SA: simulated annealing,
+# BH: basin hopping, MAC: multi algorithm collaboration.
+Algorithm = MAC
+
+# The precision for determining the space group
+SymPrec = 0.1
+
+# Optimization Code (1: vasp; 2: siesta; 3: pwscf; 4: castep; 5: lammps)
+OptCode = 5
+
+# The parallel submiting command
+#ParSubCom = mpirun -np 8 vasp532-a > log.vasp
+#ParSubCom = mpirun -np 12 siesta-openmpi <siesta.fdf >OUT
+#ParSubCom = mpirun -np 12 pw.x <pwscf.in >OUT
+#ParSubCom = RunCASTEP.sh -np 8 sys
+ParSubCom = mpirun -np 4 lammps <lammps.in >OUT
+
+# K point resolution in each local optimization. The number is in accord with the optimization number in optimization control file.
+#K_res =  0.14 0.12 0.10 0.08
+
+# The maximum time for every local optimization in hour. Local optimization exceeded this time value will be killed and the next will begin.
+MaxHour = 0.1
+

@@ -1,0 +1,91 @@
+########-------- Opt-step 1 --------########
+%include                sys.fdf
+PAO.BasisSize           SZ
+MeshCutoff              80    Ry
+PAO.EnergyShift         0.02  Ry
+XC.functional           GGA
+XC.authors              PBE
+MaxSCFIterations        100 
+DM.MixingWeight         0.150
+DM.Tolerance            1.d-4
+DM.NumberPulay          5
+ElectronicTemperature   300   K
+MD.TypeOfRun            cg
+#MD.VariableCell         F
+MD.ConstantVolume       T
+MD.MaxForceTol          1d-3   eV/Ang
+MD.NumCGsteps           50
+Use-Save-CG             T
+Use-Save-XV             T
+MD.TargetPressure       From-muse.in  GPa
+Diag.ParallelOverK      T
+UseStructFile           T
+
+########-------- Opt-step 2 --------########
+%include                sys.fdf
+PAO.BasisSize           SZ
+MeshCutoff              100    Ry
+PAO.EnergyShift         0.01   Ry
+XC.functional           GGA
+XC.authors              PBE
+MaxSCFIterations        100 
+DM.MixingWeight         0.150
+DM.Tolerance            1.d-4
+DM.NumberPulay          5
+ElectronicTemperature   300 K
+MD.TypeOfRun            cg
+#MD.VariableCell         F
+MD.ConstantVolume       T
+MD.MaxForceTol          5d-4   eV/Ang
+MD.NumCGsteps           100
+Use-Save-CG             T
+Use-Save-XV             T
+MD.TargetPressure       From-muse.in GPa
+Diag.ParallelOverK      T
+UseStructFile           T
+
+########-------- Opt-step 3 --------########
+%include                sys.fdf
+PAO.BasisSize           DZ
+MeshCutoff              100     Ry
+PAO.EnergyShift         0.002   Ry
+XC.functional           GGA
+XC.authors              PBE
+MaxSCFIterations        100 
+DM.MixingWeight         0.150
+DM.Tolerance            1.d-4
+DM.NumberPulay          5
+ElectronicTemperature   300    K
+MD.TypeOfRun            cg
+MD.VariableCell         T
+#MD.ConstantVolume       T
+MD.MaxForceTol          1d-4    eV/Ang
+MD.NumCGsteps           100
+Use-Save-CG             T
+Use-Save-XV             T
+MD.TargetPressure       From-muse.in  GPa
+Diag.ParallelOverK      T
+UseStructFile           T
+
+########-------- Opt-step 4 --------########
+%include                sys.fdf
+PAO.BasisSize           DZ
+MeshCutoff              120     Ry
+PAO.EnergyShift         0.002   Ry
+XC.functional           GGA
+XC.authors              PBE
+MaxSCFIterations        100 
+DM.MixingWeight         0.150
+DM.Tolerance            1.d-4
+DM.NumberPulay          5
+ElectronicTemperature   300 K
+MD.TypeOfRun            cg
+MD.VariableCell         T
+#MD.ConstantVolume       F
+MD.MaxForceTol          5d-5    eV/Ang
+MD.NumCGsteps           100
+Use-Save-CG             T
+Use-Save-XV             T
+MD.TargetPressure       From-muse.in  GPa
+Diag.ParallelOverK      T
+UseStructFile           T

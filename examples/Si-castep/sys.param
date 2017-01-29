@@ -1,0 +1,64 @@
+########-------- Opt-step 1 --------########
+task             : GeometryOptimization
+nextra_bands     : 16
+xc_functional    : PBE
+spin_polarized   : false
+cut_off_energy   : 250
+elec_energy_tol  : 1.0e-5
+max_scf_cycles   : 100
+smearing_width   : 0.1
+geom_energy_tol  : 1.0e-5
+geom_force_tol   : 0.03
+geom_stress_tol  : 0.05
+geom_disp_tol    : 1.0e-2
+geom_max_iter    : 100
+geom_method      : BFGS
+
+########-------- Opt-step 2 --------########
+task             : GeometryOptimization
+nextra_bands     : 16
+xc_functional    : PBE
+spin_polarized   : false
+cut_off_energy   : 300
+elec_energy_tol  : 1.0e-5
+max_scf_cycles   : 100
+smearing_width   : 0.1
+geom_energy_tol  : 1.0e-5
+geom_force_tol   : 0.03
+geom_stress_tol  : 0.05
+geom_disp_tol    : 1.0e-2
+geom_max_iter    : 100
+geom_method      : BFGS
+
+########-------- Opt-step 3 --------########
+task             : GeometryOptimization
+nextra_bands     : 16
+xc_functional    : PBE
+spin_polarized   : false
+cut_off_energy   : 350
+elec_energy_tol  : 1.0e-5
+max_scf_cycles   : 100
+smearing_width   : 0.1
+geom_energy_tol  : 1.0e-5
+geom_force_tol   : 0.03
+geom_stress_tol  : 0.05
+geom_disp_tol    : 1.0e-3
+geom_max_iter    : 100
+geom_method      : BFGS
+
+########-------- Opt-step 4 --------########
+task             : GeometryOptimization
+nextra_bands     : 16
+xc_functional    : PBE
+spin_polarized   : false
+cut_off_energy   : 400
+elec_energy_tol  : 1.0e-6
+max_scf_cycles   : 100
+smearing_width   : 0.1
+geom_energy_tol  : 1.0e-6
+geom_force_tol   : 0.03
+geom_stress_tol  : 0.05
+geom_disp_tol    : 1.0e-3
+geom_max_iter    : 100
+geom_method      : BFGS
+

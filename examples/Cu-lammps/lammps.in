@@ -1,0 +1,29 @@
+# inlammps
+units		metal
+atom_style      atomic
+
+read_data       data
+
+mass		1 63.546
+pair_style      eam
+pair_coeff      * *  Cu.pot
+
+fix             1  all box/relax iso From-muse.in dilate all
+
+thermo          1 
+thermo_style    custom step temp etotal press vol enthalpy
+minimize        1.0e-9 1.0e-9 10000 100000
+
+run             0
+
+dump	    	id  all atom 1  relax.lammpstrj
+fix             2 all box/relax iso From-muse.in dilate all
+thermo          1
+minimize        1.0e-9 1.0e-9 0 0
+variable        enth equal enthalpy
+variable        press equal press
+thermo_style    custom step temp etotal press vol enthalpy
+run             0
+print           "Enthalpy= ${enth}"
+print           "Pressure= ${press}"
+

@@ -1,0 +1,71 @@
+########-------- Opt-step 1 --------########
+fix_all_ions : false
+fix_all_cell : false
+FIX_COM : false
+%BLOCK EXTERNAL_PRESSURE
+From-muse.in 0 0 
+From-muse.in 0
+From-muse.in
+%ENDBLOCK EXTERNAL_PRESSURE
+%BLOCK SPECIES_MASS
+Mg 24.305
+O  15.999
+%ENDBLOCK SPECIES_MASS
+%BLOCK SPECIES_POT
+Mg  Mg_00PW91.usp
+O   O_00PBE.usp
+%ENDBLOCK SPECIES_POT
+
+########-------- Opt-step 2 --------########
+fix_all_ions : false
+fix_all_cell : false
+FIX_COM : false
+%BLOCK EXTERNAL_PRESSURE
+From-muse.in 0 0 
+From-muse.in 0
+From-muse.in
+%ENDBLOCK EXTERNAL_PRESSURE
+%BLOCK SPECIES_MASS
+Mg 24.305
+O  15.999
+%ENDBLOCK SPECIES_MASS
+%BLOCK SPECIES_POT
+Mg  Mg_00PW91.usp
+O   O_00PBE.usp
+%ENDBLOCK SPECIES_POT
+
+########-------- Opt-step 3 --------########
+fix_all_ions : false
+fix_all_cell : false
+FIX_COM : false
+%BLOCK EXTERNAL_PRESSURE
+From-muse.in 0 0 
+From-muse.in 0
+From-muse.in
+%ENDBLOCK EXTERNAL_PRESSURE
+%BLOCK SPECIES_MASS
+Mg 24.305
+O  15.999
+%ENDBLOCK SPECIES_MASS
+%BLOCK SPECIES_POT
+Mg  Mg_00PW91.usp
+O   O_00PBE.usp
+%ENDBLOCK SPECIES_POT
+
+########-------- Opt-step 4 --------########
+fix_all_ions : false
+fix_all_cell : false
+FIX_COM : false
+%BLOCK EXTERNAL_PRESSURE
+From-muse.in 0 0 
+From-muse.in 0
+From-muse.in
+%ENDBLOCK EXTERNAL_PRESSURE
+%BLOCK SPECIES_MASS
+Mg 24.305
+O  15.999
+%ENDBLOCK SPECIES_MASS
+%BLOCK SPECIES_POT
+Mg  Mg_00PW91.usp
+O   O_00PBE.usp
+%ENDBLOCK SPECIES_POT

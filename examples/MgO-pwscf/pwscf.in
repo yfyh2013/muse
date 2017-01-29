@@ -1,0 +1,139 @@
+########-------- Opt-step 1 --------########
+&CONTROL
+  title         = 'muse'
+  calculation   = 'vc-relax',
+  nstep         = 100,
+  etot_conv_thr = 1.0D-2,
+  forc_conv_thr = 1.0D-1,
+  pseudo_dir    = './',
+  outdir        = '/tmp/',
+  tstress       = .true.,
+/
+&SYSTEM
+  ibrav         = 0,
+  celldm(1)     = 1.0,
+  nat           = NAT,
+  ntyp          = NTYP,
+  ecutwfc       = 40,
+  ecutrho       = 400,
+  occupations   = 'smearing',
+  smearing      = 'mp',
+  degauss       = 0.02,
+/
+&ELECTRONS
+  conv_thr      = 1.D-6,
+  mixing_beta   = 0.3D0,
+  /
+&IONS
+/
+&CELL
+  press         = PRESS,
+  cell_dynamics = 'bfgs',
+  cell_factor   = 2.0D0,
+  cell_dofree   = 'all',
+/
+
+########-------- Opt-step 2 --------########
+&CONTROL
+  title         = 'muse'
+  calculation   = 'vc-relax',
+  nstep         = 100,
+  etot_conv_thr = 1.0D-3,
+  forc_conv_thr = 1.0D-2,
+  pseudo_dir    = './',
+  outdir        = '/tmp/',
+  tstress       = .true.,
+  /
+&SYSTEM
+  ibrav         = 0,
+  celldm(1)     = 1.0,
+  nat           = NAT,
+  ntyp          = NTYP,
+  ecutwfc       = 45,
+  ecutrho       = 450
+  occupations   = 'smearing',
+  smearing      = 'mp',
+  degauss       = 0.02,
+  /
+&ELECTRONS
+  conv_thr      = 1.D-6,
+  mixing_beta   = 0.3D0,
+  /
+&IONS
+/
+&CELL
+  press         = PRESS,
+  cell_dynamics = 'bfgs',
+  cell_factor   = 2.0D0,
+  cell_dofree   = 'all',
+/
+
+########-------- Opt-step 3 --------########
+&CONTROL
+  title         = 'muse'
+  calculation   = 'vc-relax',
+  nstep         = 100,
+  etot_conv_thr = 1.0D-4,
+  forc_conv_thr = 1.0D-3,
+  pseudo_dir    = './',
+  outdir        = '/tmp/',
+  tstress       = .true.,
+  /
+&SYSTEM
+  ibrav         = 0,
+  celldm(1)     = 1.0,
+  nat           = NAT,
+  ntyp          = NTYP,
+  ecutwfc       = 50,
+  ecutrho       = 500,
+  occupations   = 'smearing',
+  smearing      = 'mp',
+  degauss       = 0.02,
+  /
+&ELECTRONS
+  conv_thr      = 1.D-6,
+  mixing_beta   = 0.3D0,
+  /
+&IONS
+/
+&CELL
+  press         = PRESS,
+  cell_dynamics = 'bfgs',
+  cell_factor   = 2.0D0,
+  cell_dofree   = 'all',
+/
+
+########-------- Opt-step 4 --------########
+&CONTROL
+  title         = 'muse'
+  calculation   = 'vc-relax',
+  nstep         = 100,
+  etot_conv_thr = 1.0D-5,
+  forc_conv_thr = 1.0D-4
+  pseudo_dir    = './',
+  outdir        = '/tmp/',
+  tstress       = .true.,
+  /
+&SYSTEM
+  ibrav         = 0,
+  celldm(1)     = 1.0,
+  nat           = NAT,
+  ntyp          = NTYP,
+  ecutwfc       = 60,
+  ecutrho       = 600,
+  occupations   = 'smearing',
+  smearing      = 'mp',
+  degauss       = 0.02,
+/
+&ELECTRONS
+  conv_thr      = 1.D-6,
+  mixing_beta   = 0.3D0,
+/
+&IONS
+/
+&CELL
+  press         = PRESS,
+  cell_dynamics = 'bfgs',
+  cell_factor   = 2.0D0,
+  cell_dofree   = 'all',
+/

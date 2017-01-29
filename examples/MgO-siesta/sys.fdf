@@ -1,0 +1,10 @@
+SystemName muse
+SystemLabel muse
+
+NumberOfSpecies 2
+NumberOfAtoms   36
+
+%block ChemicalSpeciesLabel
+1    12   Mg
+2    8    O
+%endblock ChemicalSpeciesLabel
